@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'nav/BottomNavWidget.dart';
+import 'nav/BottomNavWidget_Custom.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,7 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '开始页面',
-      theme: ThemeData.light(),
+      theme: ThemeData(
+        primaryColor: Colors.pink
+      ),//自定义主题
       home: _Mainpage(),
     );
   }
@@ -57,21 +60,20 @@ class _Mainpage extends StatelessWidget {
                   },
                 ) ,
               ),
-              /*Expanded(
+              Expanded(
                   child:RaisedButton(
-                    child: Text('底部导航栏',
+                    child: Text('不规则底部导航栏',
                       style: TextStyle(
-                          color: Colors.black12,
-                          fontSize: 15.0,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold
                       ),
                     ),
                     onPressed: (){
-                          (context) => BottomNavWidget();
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => bottom_navgation_custom()));
                     },
                   ) ,
                 ),
-                Expanded(
+             /*   Expanded(
                   child:RaisedButton(
                     child: Text('底部导航栏',
                       style: TextStyle(
