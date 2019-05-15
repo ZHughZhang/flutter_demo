@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'nav/BottomNavWidget.dart';
 import 'nav/BottomNavWidget_Custom.dart';
+import 'route_animation/page/route_page1.dart';
 
 void main() => runApp(MyApp());
 
@@ -73,9 +74,9 @@ class _Mainpage extends StatelessWidget {
                     },
                   ) ,
                 ),
-             /*   Expanded(
+              Expanded(
                   child:RaisedButton(
-                    child: Text('底部导航栏',
+                    child: Text('路由动画',
                       style: TextStyle(
                           color: Colors.black12,
                           fontSize: 20.0,
@@ -83,11 +84,11 @@ class _Mainpage extends StatelessWidget {
                       ),
                     ),
                     onPressed: (){
-                          (context) => BottomNavWidget();
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => route_page1()));
                     },
                   ) ,
                 ),
-                Expanded(
+               /* Expanded(
                   child:RaisedButton(
                     child: Text('底部导航栏',
                       style: TextStyle(
