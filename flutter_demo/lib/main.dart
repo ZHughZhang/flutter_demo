@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'nav/BottomNavWidget.dart';
-import 'nav/BottomNavWidget_Custom.dart';
+import 'package:flutter_demo/nav/bottomNav/BottomNavWidget.dart';
+import 'package:flutter_demo/nav/bottomNav/BottomNavWidget_Custom.dart';
 import 'route_animation/page/route_page1.dart';
+import 'effect/frosted_glass.dart';
+import 'nav/topNav/TopNavWidget.dart';
 
 void main() => runApp(MyApp());
 
@@ -88,7 +90,21 @@ class _Mainpage extends StatelessWidget {
                     },
                   ) ,
                 ),
-               /* Expanded(
+                Expanded(
+                  child:RaisedButton(
+                    child: Text('毛玻璃效果',
+                      style: TextStyle(
+                          color: Colors.black12,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    onPressed: (){
+                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>frosted_glass()));
+                    },
+                  ) ,
+                ),
+              Expanded(
                   child:RaisedButton(
                     child: Text('底部导航栏',
                       style: TextStyle(
@@ -98,25 +114,12 @@ class _Mainpage extends StatelessWidget {
                       ),
                     ),
                     onPressed: (){
-                          (context) => BottomNavWidget();
+
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> top_nav_widget()));
                     },
                   ) ,
                 ),
-                Expanded(
-                  child:RaisedButton(
-                    child: Text('底部导航栏',
-                      style: TextStyle(
-                          color: Colors.black12,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    onPressed: (){
-                          (context) => BottomNavWidget();
-                    },
-                  ) ,
-                ),
-                Expanded(
+              /*  Expanded(
                   child:RaisedButton(
                     child: Text('底部导航栏',
                       style: TextStyle(
