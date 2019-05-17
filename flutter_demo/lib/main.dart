@@ -5,6 +5,7 @@ import 'route_animation/page/route_page1.dart';
 import 'effect/frosted_glass.dart';
 import 'nav/topNav/TopNavWidget.dart';
 import 'search/search_bar.dart';
+import 'wraplayout/wrap_layout.dart';
 
 void main() => runApp(MyApp());
 
@@ -134,9 +135,9 @@ class _Mainpage extends StatelessWidget {
                     },
                   ) ,
                 ),
-              /* Expanded(
+               Expanded(
                   child:RaisedButton(
-                    child: Text('底部导航栏',
+                    child: Text('流式布局',
                       style: TextStyle(
                           color: Colors.black12,
                           fontSize: 20.0,
@@ -144,10 +145,12 @@ class _Mainpage extends StatelessWidget {
                       ),
                     ),
                     onPressed: (){
-                          (context) => BottomNavWidget();
+
+
+                          Navigator.of(context).push(MaterialPageRoute(builder:(context) => wrap_layout() ));
                     },
                   ) ,
-                ),*/
+                ),
             ],
           )
       ),
