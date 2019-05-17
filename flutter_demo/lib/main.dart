@@ -6,6 +6,8 @@ import 'effect/frosted_glass.dart';
 import 'nav/topNav/TopNavWidget.dart';
 import 'search/search_bar.dart';
 import 'wraplayout/wrap_layout.dart';
+import 'expansiontile/expansion_tile.dart';
+import 'expansiontile/expansion_panel_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -145,12 +147,38 @@ class _Mainpage extends StatelessWidget {
                       ),
                     ),
                     onPressed: (){
-
-
                           Navigator.of(context).push(MaterialPageRoute(builder:(context) => wrap_layout() ));
                     },
                   ) ,
                 ),
+              Expanded(
+                child:RaisedButton(
+                  child: Text('expansion tile',
+                    style: TextStyle(
+                        color: Colors.black12,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => expandion_tile() ));
+                  },
+                ) ,
+              ),
+              Expanded(
+                child:RaisedButton(
+                  child: Text('expansion panel list',
+                    style: TextStyle(
+                        color: Colors.black12,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder:(context) => expansion_panel_list()));
+                  },
+                ) ,
+              ),
             ],
           )
       ),
