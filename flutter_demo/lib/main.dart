@@ -8,6 +8,8 @@ import 'search/search_bar.dart';
 import 'wraplayout/wrap_layout.dart';
 import 'expansiontile/expansion_tile.dart';
 import 'expansiontile/expansion_panel_list.dart';
+import 'bezier/bezier_curve.dart';
+import 'bezier/bezier_curve2.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: '开始页面',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.pink), //自定义主题
       home: _Mainpage(),
     );
@@ -159,6 +162,32 @@ class _Mainpage extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => expansion_panel_list()));
+              },
+            ),
+			RaisedButton(
+			  child: Text(
+				' wave_bezier',
+				style: TextStyle(
+					color: Colors.black,
+					fontSize: 15.0,
+					fontWeight: FontWeight.bold),
+			  ),
+			  onPressed: () {
+				Navigator.of(context).push(MaterialPageRoute(
+					builder: (context) => bezier()));
+			  },
+			),
+            RaisedButton(
+              child: Text(
+                'bezier curve',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => wave_bezier()));
               },
             ),
           ],
